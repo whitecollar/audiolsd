@@ -1,0 +1,16 @@
+[Unit]
+Description = micpy
+After = network.target 
+ 
+[Service]
+Type = simple
+ExecStart = python3 /home/lex/mic1.py
+User = root
+Group = root
+Restart = on-failure 
+SyslogIdentifier = micPYrecord
+RestartSec = 5
+TimeoutStartSec = infinity
+ 
+[Install]
+WantedBy = multi-user.target 
